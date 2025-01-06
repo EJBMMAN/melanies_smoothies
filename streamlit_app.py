@@ -26,9 +26,9 @@ ingredients_list = st.multiselect(
     , max_selections=5
 )
 
-smoothiefroot_response =  requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response.json())
-sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+# smoothiefroot_response =  requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+# st.text(smoothiefroot_response.json())
+# sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
 if ingredients_list:
     st.write(ingredients_list)
@@ -37,12 +37,10 @@ if ingredients_list:
     ingredients_string = ''
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
-        try:
-            smoothiefroot_response =  requests.get("https://my.smoothiefroot.com/api/fruit/"+fruit_chosen)
-            st.text(smoothifroot_response.json())
-            st.dataframe(data=smoothifroot_response.json(), use_container_width=True)
-        except:
-            pass
+        smoothiefroot_response =  requests.get("https://my.smoothiefroot.com/api/fruit/"+fruit_chosen)
+        st.text(smoothifroot_response.json())
+        sf_df = st.dataframe(data=smoothifroot_response.json(), use_container_width=True)
+        
     
 
     # st.write(ingredients_string)
