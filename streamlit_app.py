@@ -40,7 +40,7 @@ if ingredients_list:
         try:
             smoothiefroot_response =  requests.get("https://my.smoothiefroot.com/api/fruit/"+fruit_chosen)
             # st.text(smoothifroot_response.json())
-            sf_df = st.dataframe(data=smoothifroot_response.json(), use_container_width=True)
+            st.dataframe(data=smoothifroot_response.json(), use_container_width=True)
         except:
             pass
     
