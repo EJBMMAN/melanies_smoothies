@@ -38,8 +38,8 @@ if ingredients_list:
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
         try:
-            smoothiefroot_response =  requests.get("https://mysmoothiefroot.com/api/fruit/"+fruit_chosen)
-            st.text(smoothifroot_response.json())
+            smoothiefroot_response =  requests.get("https://my.smoothiefroot.com/api/fruit/"+fruit_chosen)
+            # st.text(smoothifroot_response.json())
             sf_df = st.dataframe(data=smoothifroot_response.json(), use_container_width=True)
         except:
             pass
