@@ -37,9 +37,12 @@ if ingredients_list:
     ingredients_string = ''
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
-        smoothiefroot_response =  requests.get("https://mysmoothiefroot.com/api/fruit/"+fruit_chosen)
-        sf_df = st.dataframe(data=smoothifroot_response.json(), use_container_width=True)
-
+        try:
+            smoothiefroot_response =  requests.get("https://mysmoothiefroot.com/api/fruit/"+fruit_chosen)
+            st.dataframe(data=smoothifroot_response.json(), use_container_width=True)
+        except:
+            pass
+    
 
     # st.write(ingredients_string)
 
